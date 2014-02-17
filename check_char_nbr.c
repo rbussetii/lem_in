@@ -1,0 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_char_nbr.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rbusseti <rbusseti@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2014/02/17 17:32:02 by rbusseti          #+#    #+#             */
+/*   Updated: 2014/02/17 17:34:38 by rbusseti         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "lem_in.h"
+
+int		ft_is_char(char *infos, char c)
+{				  
+	int		i;
+
+	i = 0;
+	while (infos[i] != '\0')
+	{
+		if (infos[i] == c)
+			return (1);
+	}
+	return (0);
+}
+
+int		ft_is_nbr_lem(char *infos, t_lem **graph)
+{
+	int		i;
+
+	i = 0;
+	while (infos[i] != '\0')
+	{
+		if (ft_isdigit(infos[i]) == 0)
+			return (0);
+	}
+	(*graph)->lem_nbr = ft_atoi(infos);
+	return (1);
+}
